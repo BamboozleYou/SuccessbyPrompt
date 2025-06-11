@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success By Prompt - The Developer's Blueprint for AI-Powered Career Mastery</title>
+  <style>
+    /* Base Styles */
+    :root {
+      --color-blue-400: #60a5fa;
+      --color-blue-500: #3b82f6;
+      --color-blue-600: #2563eb;
+      --color-blue-700: #1d4ed8;
+      --color-blue-800: #1e40af;
+      --color-blue-900: #1e3a8a;
+      --color-purple-400: #a78bfa;
+      --color-purple-500: #8b5cf6;
+      --color-purple-600: #7c3aed;
+      --color-purple-900: #4c1d95;
+      --color-gray-100: #f3f4f6;
+      --color-gray-300: #d1d5db;
+      --color-gray-400: #9ca3af;
+      --color-gray-500: #6b7280;
+      --color-gray-600: #4b5563;
+      --color-gray-700: #374151;
+      --color-gray-800: #1f2937;
+      --color-gray-900: #111827;
+      --color-green-400: #34d399;
+      --color-yellow-400: #fbbf24;
+      --color-red-500: #ef4444;
+    }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(to bottom right, var(--color-gray-900), var(--color-gray-800));
+  color: white;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--color-blue-600);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-blue-700);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-blue-600);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-100);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid var(--color-gray-300);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gray-700);
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, var(--color-blue-400), var(--color-purple-400));
+  color: var(--color-gray-900);
+  border: none;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, var(--color-blue-500), var(--color-purple-500));
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::before {
+  content: '';
+  position: absolute;
+  top: -0.125rem;
+  right: -0.125rem;
+  bottom: -0.125rem;
+  left: -0.125rem;
+  background: linear-gradient(to right, var(--color-blue-600), var(--color-purple-600));
+  border-radius: 0.5rem;
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.75;
+}
+
+/* Page Management */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Header / Navigation */
+header {
+  background-color: var(--color-gray-900);
+  border-bottom: 1px solid var(--color-blue-500);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-success {
+  color: var(--color-blue-400);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.logo-by {
+  color: var(--color-purple-400);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.logo-prompt {
+  color: var(--color-blue-400);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.logo-ai {
+  color: var(--color-gray-400);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-300);
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: white;
+  border-bottom-color: var(--color-blue-500);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  color: var(--color-blue-400);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-gray-300);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-prompt {
+  background-color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-800);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.prompt-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: var(--color-red-500);
+}
+
+.dot-yellow {
+  background-color: var(--color-yellow-400);
+}
+
+.dot-green {
+  background-color: var(--color-green-400);
+}
+
+.prompt-url {
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.prompt-content {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-green-400);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prompt-input {
+  color: var(--color-purple-400);
+}
+
+.prompt-comment {
+  color: var(--color-gray-400);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  background-color: var(--color-gray-300);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* QR Code Section */
+.qr-section {
+  background: linear-gradient(to right, var(--color-blue-900), var(--color-purple-900));
+  border: 1px solid var(--color-blue-800);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 4rem 0;
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.qr-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.qr-content p {
+  color: var(--color-gray-300);
+  margin-bottom: 1rem;
+}
+
+.qr-feature {
+  background-color: rgba(31, 41, 55, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-700);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.qr-feature-icon {
+  color: var(--color-green-400);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.qr-feature p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.qr-feature-highlight {
+  color: white;
+  font-weight: 500;
+}
+
+.qr-code {
+  display: flex;
+  justify-content: center;
+}
+
+.qr-code-container {
+  position: relative;
+  width: fit-content;
+}
+
+.qr-code-glow {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  z-index: 0;
+  filter: blur(15px);
+  opacity: 0.75;
+}
+
+.qr-code-inner {
+  position: relative;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.qr-code-display {
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-grid-display {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.25rem;
+  width: 80%;
+  height: 80%;
+}
+
+.qr-cell {
+  width: 100%;
+  height: 100%;
+}
+
+.qr-code-label {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-gray-900);
+  font-weight: 500;
+}
+
+/* Book Value Section */
+.book-value {
+  background-color: var(--color-gray-800);
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-gray-700);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.value-card {
+  background-color: var(--color-gray-900);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-700);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-blue-600);
+  color: white;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  color: var(--color-gray-300);
+  font-size: 0.875rem;
+}
+
+.center-content {
+  text-align: center;
+}
+
+/* Prompts Section */
+.prompts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.prompts-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.prompts-description {
+  font-size: 1.25rem;
+  color: var(--color-gray-300);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.prompts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.prompt-card {
+  background-color: var(--color-gray-800);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-700);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.prompt-card-header {
+  background-color: var(--color-gray-700);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-category {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-blue-400);
+}
+
+.prompt-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.prompt-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: none;
+}
+
+.prompt-btn-copy {
+  background-color: var(--color-blue-600);
+  color: white;
+}
+
+.prompt-btn-copy:hover {
+  background-color: var(--color-blue-700);
+}
+
+.prompt-btn-qr {
+  background-color: var(--color-gray-600);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.prompt-btn-qr:hover {
+  background-color: var(--color-gray-500);
+}
+
+.prompt-btn-qr svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.prompt-card-body {
+  padding: 1rem;
+}
+
+.prompt-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.prompt-text {
+  background-color: var(--color-gray-900);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  margin-bottom: 0.75rem;
+  white-space: pre-wrap;
+}
+
+.prompt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-info {
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.prompt-link {
+  font-size: 0.75rem;
+  color: var(--color-blue-400);
+  cursor: pointer;
+}
+
+.prompt-link:hover {
+  color: var(--color-blue-300);
+}
+
+.qr-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.qr-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.qr-dropdown:hover .qr-dropdown-content {
+  display: block;
+}
+
+.dropdown-qr-display {
+  width: 10rem;
+  height: 9rem;
+  background-color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-qr-label {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-gray-900);
+  margin-top: 0.25rem;
+}
+
+/* Book Promo Section */
+.book-promo {
+  background: linear-gradient(to right, var(--color-blue-900), var(--color-purple-900));
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.promo-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.promo-content {
+  flex: 1;
+}
+
+.promo-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.promo-content p {
+  color: var(--color-gray-300);
+  margin-bottom: 1rem;
+}
+
+.promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.promo-sidebar {
+  width: 100%;
+}
+
+.promo-card {
+  position: relative;
+}
+
+.promo-card-glow {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  left: -0.25rem;
+  background: linear-gradient(to right, var(--color-blue-400), var(--color-purple-400));
+  border-radius: 0.5rem;
+  z-index: 0;
+  filter: blur(10px);
+  opacity: 0.75;
+}
+
+.promo-card-inner {
+  position: relative;
+  background-color: var(--color-gray-800);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.promo-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.promo-list {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.promo-list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.promo-check {
+  color: var(--color-green-400);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Comparison Table */
+.comparison {
+  background-color: var(--color-gray-800);
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-gray-700);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-gray-700);
+}
+
+th, td {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+}
+
+th {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  letter-spacing: 0.05em;
+}
+
+th:nth-child(3) {
+  color: var(--color-blue-400);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-gray-700);
+}
+
+td {
+  font-size: 0.875rem;
+}
+
+td:first-child {
+  font-weight: 500;
+  color: var(--color-gray-100);
+}
+
+td:nth-child(2) {
+  color: var(--color-gray-300);
+}
+
+td:nth-child(3) {
+  color: white;
+}
+
+.feature-highlight {
+  color: var(--color-blue-400);
+  font-weight: 700;
+}
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cta h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  color: var(--color-gray-300);
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-gray-900);
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-gray-800);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-gray-300);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--color-gray-400);
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-gray-800);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-gray-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.social-icon:hover {
+  background-color: var(--color-gray-700);
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .cta-actions {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .qr-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prompts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promo-flex {
+    flex-direction: row;
+  }
+
+  .promo-sidebar {
+    width: 33.333333%;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .value-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-600);
+  background-color: var(--color-gray-800);
+  color: var(--color-gray-300);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-gray-700);
+  color: white;
+}
+
+.filter-btn.active {
+  background-color: var(--color-blue-600);
+  color: white;
+  border-color: var(--color-blue-600);
+}
+
+/* Category Accordion */
+.prompt-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.category-section {
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.category-section.hidden {
+  display: none;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  cursor: pointer;
+  background-color: var(--color-gray-800);
+  transition: background-color 0.2s;
+}
+
+.category-header:hover {
+  background-color: var(--color-gray-750);
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-blue-600);
+  color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.category-description {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  margin: 0;
+}
+
+.category-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.prompt-count {
+  font-size: 0.875rem;
+  color: var(--color-blue-400);
+  font-weight: 500;
+}
+
+.chevron {
+  color: var(--color-gray-400);
+  transition: transform 0.3s ease;
+}
+
+.category-section.expanded .chevron {
+  transform: rotate(180deg);
+}
+
+/* Category Content */
+.category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: var(--color-gray-850);
+}
+
+.category-section.expanded .category-content {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.category-prompts {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Prompt Items */
+.prompt-item {
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.prompt-item:hover {
+  border-color: var(--color-blue-600);
+  box-shadow: 0 0 0 1px var(--color-blue-600);
+}
+
+.prompt-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.prompt-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.prompt-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: var(--color-blue-600);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.prompt-copy-btn:hover {
+  background-color: var(--color-blue-700);
+}
+
+.prompt-item-text {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+  background-color: var(--color-gray-900);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid var(--color-blue-600);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .category-info {
+    gap: 0.75rem;
+  }
+  
+  .category-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .category-title {
+    font-size: 1.125rem;
+  }
+  
+  .prompt-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .category-filters {
+    justify-content: flex-start;
+  }
+  
+  .filter-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-success">Success</span>
+        <span class="logo-by">By</span>
+        <span class="logo-prompt">Prompt</span>
+        <span class="logo-ai">.ai</span>
+      </div>
+      <div class="nav-links">
+        <a data-page="home" class="nav-link active">Home</a>
+        <a data-page="free-prompts" class="nav-link">Free Prompts</a>
+        <a data-page="premium-content" class="nav-link">Premium Content</a>
+        <a data-page="about-book" class="nav-link">About the Book</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-primary">Login</button>
+        <button class="btn btn-secondary">I Have the Book</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+      <!-- Hero Section -->
+      <section class="hero section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span>Developer Success</span>
+            <span class="hero-subtitle">Powered by AI</span>
+          </h1>
+          <p class="hero-description">
+            Unlock your technical career potential with proven prompt engineering techniques from the bestselling book.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="showPage('free-prompts')">Get Free Prompts</button>
+            <a href="#" class="btn btn-secondary btn-lg">Buy the Book</a>
+          </div>
+        </div>
+        <div class="glow hero-prompt">
+          <div class="prompt-header">
+            <div class="prompt-dots">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="prompt-url">prompt.ai</div>
+          </div>
+          <div class="prompt-content">
+            <div>> Using AI to advance your career...</div>
+            <div class="prompt-input">> Act as a technical career advisor with expertise in software development career paths.</div>
+            <div class="prompt-input">> Analyze my current skills as a backend developer with 5 years of experience in Python and Django.</div>
+            <div class="prompt-input">> Recommend 3 strategic skills I should develop in the next 6 months to maximize my market value and career growth potential.</div>
+            <div class="prompt-comment">// This is just one of 100+ career-advancing prompts from the book</div>
+            <div class="cursor"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta section">
+        <h2>Ready to Transform Your Developer Career?</h2>
+        <p>Join thousands of developers who are leveraging AI to advance their careers.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="showPage('free-prompts')">Try Free Prompts</button>
+          <button class="btn btn-gradient btn-lg" onclick="showPage('premium-content')">Explore Premium Content</button>
+          <button class="btn btn-outline btn-lg" onclick="showPage('about-book')">Learn About the Book</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- FREE PROMPTS PAGE -->
+    <div id="free-prompts" class="page">
+      <section class="section">
+        <div class="prompts-header">
+          <h1 class="prompts-title">Free Sample Prompts</h1>
+          <p class="prompts-description">
+            Explore our categorized collection of career-advancing prompts. Filter by category and copy prompts instantly.
+          </p>
+        </div>
+    
+        <!-- Category Filters -->
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="problem-solving">Problem Solving</button>
+          <button class="filter-btn" data-category="skill-development">Skill Development</button>
+          <button class="filter-btn" data-category="career-enhancement">Career Enhancement</button>
+          <button class="filter-btn" data-category="resume-help">Resume Help</button>
+          <button class="filter-btn" data-category="interview-prep">Interview Prep</button>
+        </div>
+    
+        <!-- Problem Solving Category -->
+        <div class="category-section active" data-category="problem-solving">
+          <div class="category-header">
+            <div class="category-info">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.26 13a2 2 0 0 1 0-2H7a2 2 0 1 1 0-4h2.26a2 2 0 0 1 3.48-3.48A2 2 0 0 1 17 7h4a2 2 0 1 1 0 4h-4a2 2 0 0 1-4.26 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Problem Solving & Architecture</h3>
+                <p class="category-description">Debug issues, design solutions, and architect scalable systems</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="category-prompts">
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Solution Architecture Brainstorming</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Help me brainstorm different architectural approaches for [DESCRIBE TECHNICAL CHALLENGE]. Consider scalability, performance, and maintenance requirements. Generate 3 distinct approaches with pros and cons for each.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Debugging Strategy Assistant</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">I'm encountering [DESCRIBE BUG/ISSUE] in my [TECHNOLOGY/FRAMEWORK] application. Walk me through a systematic debugging approach, including the most likely causes and step-by-step troubleshooting methods.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Code Review & Optimization</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Review this code snippet and suggest improvements for performance, readability, and maintainability: [PASTE YOUR CODE]. Focus on best practices and potential security vulnerabilities.</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Skill Development Category -->
+        <div class="category-section" data-category="skill-development">
+          <div class="category-header">
+            <div class="category-info">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Personal Skill Development</h3>
+                <p class="category-description">Learn new technologies and improve existing skills efficiently</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="category-prompts">
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Personalized Learning Path</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Create a 30-day learning plan to help me master [TECHNOLOGY/SKILL] as efficiently as possible. I have [X] years of experience with [RELATED TECHNOLOGIES] and can dedicate [TIME] hours per week to learning. Include recommended resources and milestones.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Technical Skill Gap Analysis</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Analyze my current technical skills as a [YOUR ROLE] with [X] years of experience in [TECHNOLOGIES]. Identify the top 3 skill gaps I should address to advance to a [TARGET ROLE] position, considering current market demands.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Learning Efficiency Optimizer</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">I'm learning [TECHNOLOGY] but struggling with [SPECIFIC CHALLENGE]. Suggest 5 different learning approaches tailored to my learning style: [visual/auditory/kinesthetic/reading]. Include practical exercises and ways to measure progress.</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Career Enhancement Category -->
+        <div class="category-section" data-category="career-enhancement">
+          <div class="category-header">
+            <div class="category-info">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Career Enhancement</h3>
+                <p class="category-description">Strategic career planning and professional growth guidance</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="category-prompts">
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Career Transition Strategy</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">I want to transition from [CURRENT ROLE] to [TARGET ROLE] within [TIMEFRAME]. Create a step-by-step action plan including skills to develop, projects to build, and networking strategies. Consider my experience in [CURRENT TECHNOLOGIES].</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Salary Negotiation Prep</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Help me prepare for a salary negotiation for a [JOB TITLE] position. My current salary is [AMOUNT], I have [X] years of experience, and the market rate appears to be [RANGE]. Provide talking points and justifications for a [TARGET AMOUNT] request.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Professional Development Plan</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Create a 12-month professional development plan for a [YOUR ROLE] looking to advance to [TARGET LEVEL]. Include specific skills, certifications, projects, and measurable goals. Consider industry trends in [YOUR FIELD].</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Resume Help Category -->
+        <div class="category-section" data-category="resume-help">
+          <div class="category-header">
+            <div class="category-info">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Resume & Application Help</h3>
+                <p class="category-description">Optimize your resume and job applications for maximum impact</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="category-prompts">
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Resume Achievement Enhancement</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Transform these basic job descriptions into powerful achievement statements for my resume: 1) [BASIC DESCRIPTION 1] 2) [BASIC DESCRIPTION 2] 3) [BASIC DESCRIPTION 3]. Focus on quantifiable impacts and technical expertise.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">ATS-Optimized Resume Review</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Review my resume for a [JOB TITLE] position at [COMPANY TYPE]. Optimize it for ATS systems by suggesting relevant keywords, improving formatting, and ensuring it aligns with this job description: [PASTE JOB DESCRIPTION].</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Cover Letter Customization</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Write a compelling cover letter for [JOB TITLE] at [COMPANY]. Highlight how my experience in [YOUR BACKGROUND] aligns with their needs: [KEY REQUIREMENTS FROM JOB POSTING]. Make it personal and specific to this opportunity.</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Interview Prep Category -->
+        <div class="category-section" data-category="interview-prep">
+          <div class="category-header">
+            <div class="category-info">
+              <div class="category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Interview Preparation</h3>
+                <p class="category-description">Ace your technical and behavioral interviews</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="category-prompts">
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Technical Interview Preparation</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Help me prepare for a technical interview for [JOB TITLE] at [COMPANY TYPE]. Generate 10 likely technical questions based on [TECHNOLOGIES/SKILLS REQUIRED] and provide detailed answers I can practice with.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">STAR Method Story Builder</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">Help me structure this experience into a compelling STAR format story for behavioral interviews: [DESCRIBE YOUR EXPERIENCE]. Make it concise yet detailed, highlighting leadership, problem-solving, or technical skills.</div>
+            </div>
+    
+            <div class="prompt-item">
+              <div class="prompt-item-header">
+                <h4 class="prompt-item-title">Company Research & Questions</h4>
+                <button class="prompt-copy-btn" onclick="copyPrompt(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-item-text">I'm interviewing at [COMPANY] for [POSITION]. Based on their business model, recent news, and industry challenges, suggest 8 thoughtful questions I can ask that demonstrate genuine interest and technical understanding.</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Book Promotion -->
+        <div class="book-promo">
+          <div class="promo-flex">
+            <div class="promo-content">
+              <h2>Get 200+ More Prompts with the Complete Book</h2>
+              <p>
+                These sample prompts are just the beginning. The complete book includes 200+ prompts across 15+ categories, detailed implementation guides, and career transformation frameworks.
+              </p>
+              <div class="promo-actions">
+                <button class="btn btn-secondary" onclick="showPage('premium-content')">Learn More</button>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+              </div>
+            </div>
+            <div class="promo-sidebar">
+              <div class="promo-card">
+                <div class="promo-card-glow"></div>
+                <div class="promo-card-inner">
+                  <div class="promo-card-title">Book Owners Get:</div>
+                  <ul class="promo-list">
+                    <li class="promo-list-item">
+                      <svg class="promo-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Premium website access
+                    </li>
+                    <li class="promo-list-item">
+                      <svg class="promo-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Implementation frameworks
+                    </li>
+                    <li class="promo-list-item">
+                      <svg class="promo-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      30-day transformation plan
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PREMIUM CONTENT PAGE -->
+    <div id="premium-content" class="page">
+        <!-- Website vs Book Comparison -->
+        <section class="comparison section">
+          <h2 class="section-title">Website vs. Complete Book</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Free Website</th>
+                  <th>Complete Book</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Career Advancement Prompts</td>
+                  <td>25 sample prompts</td>
+                  <td><span class="feature-highlight">200+ comprehensive prompts</span></td>
+                </tr>
+                <tr>
+                  <td>Implementation Guidance</td>
+                  <td>Basic usage tips</td>
+                  <td><span class="feature-highlight">Complete frameworks and workflows</span></td>
+                </tr>
+                <tr>
+                  <td>Career Strategy</td>
+                  <td>General overview</td>
+                  <td><span class="feature-highlight">Personalized paths and adaptation guides</span></td>
+                </tr>
+                <tr>
+                  <td>Customization Techniques</td>
+                  <td>Limited examples</td>
+                  <td><span class="feature-highlight">Comprehensive modification system</span></td>
+                </tr>
+                <tr>
+                  <td>Case Studies</td>
+                  <td>None</td>
+                  <td><span class="feature-highlight">12 detailed success stories</span></td>
+                </tr>
+                <tr>
+                  <td>Transformation Plan</td>
+                  <td>Not available</td>
+                  <td><span class="feature-highlight">Complete 30-day implementation plan</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="center-content">
+            <a href="#" class="btn btn-gradient btn-lg">Get the Complete Experience</a>
+          </div>
+        </section>
+        
+      <!-- Book Value Section -->
+      <section class="book-value section">
+        <h2 class="section-title">Why Get the Complete Book?</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+              </svg>
+            </div>
+            <h3>Complete Prompt Library</h3>
+            <p>Access all 200+ expertly crafted prompts across 7 career-advancing categories, not just the 15% sample available on this site.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3>Strategic Implementation</h3>
+            <p>Learn the reasoning behind each prompt, when to use them, and how to customize them for your specific career situation.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3>Career Growth Frameworks</h3>
+            <p>Get complete career advancement systems with step-by-step implementation plans only available in the full book.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3>Real-World Case Studies</h3>
+            <p>Exclusive success stories and practical examples showing how developers transformed their careers using these AI techniques.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3>30-Day Transformation Plan</h3>
+            <p>Follow the book's structured implementation calendar to see measurable career progress in just one month.</p>
+          </div>
+        </div>
+        <div class="center-content">
+          <a href="#" class="btn btn-gradient btn-lg">Get the Complete Book</a>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="section">
+        <h2 class="section-title">What Developers Are Saying</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <div style="display: flex; align-items: flex-start;">
+              <div style="width: 3rem; height: 3rem; border-radius: 9999px; background-color: var(--color-blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">JD</div>
+              <div>
+                <p style="font-style: italic; margin-bottom: 0.5rem;">
+                  "The book's prompt frameworks helped me go from mid-level developer to lead engineer in just 8 months. The strategic AI usage techniques were game-changing for my career."
+                </p>
+                <p style="color: var(--color-blue-400); font-weight: 500;">Jamie Davis, Senior Software Engineer</p>
+              </div>
+            </div>
+          </div>
+          <div class="value-card">
+            <div style="display: flex; align-items: flex-start;">
+              <div style="width: 3rem; height: 3rem; border-radius: 9999px; background-color: var(--color-purple-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">RK</div>
+              <div>
+                <p style="font-style: italic; margin-bottom: 0.5rem;">
+                  "I was skeptical about AI for career advancement, but the comprehensive approach in this book changed everything. My productivity increased by 40% and I finally made the jump to a senior role."
+                </p>
+                <p style="color: var(--color-blue-400); font-weight: 500;">Rani Kaur, Full-Stack Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+    </div>
+
+    <!-- ABOUT THE BOOK PAGE -->
+    <div id="about-book" class="page">
+      <!-- QR Code Section -->
+      <section class="qr-section">
+        <div class="qr-grid">
+          <div class="qr-content">
+            <h2>Easy Access for Book Owners</h2>
+            <p>
+              We understand that typing long prompts is cumbersome. That's why each prompt in the book includes a QR code that opens that specific prompt in your browser - ready to copy with one click.
+            </p>
+            <div class="qr-feature">
+              <div class="qr-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p>
+                <span class="qr-feature-highlight">Scan & Copy:</span> Every prompt in the book has its own QR code for instant digital access
+              </p>
+            </div>
+            <div class="qr-feature">
+              <div class="qr-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p>
+                <span class="qr-feature-highlight">The Context Stays in the Book:</span> Access the prompt text for easy copying, while keeping the strategic guidance, customization tips, and implementation frameworks in the book
+              </p>
+            </div>
+          </div>
+          <div class="qr-code">
+            <div class="qr-code-container">
+              <div class="qr-code-glow"></div>
+              <div class="qr-code-inner">
+                <div class="qr-code-display">
+                  <div class="qr-grid-display">
+                    <!-- Simplified QR code visualization -->
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: white;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                    <div class="qr-cell" style="background-color: black;"></div>
+                  </div>
+                </div>
+                <div class="qr-code-label">Prompt #42: Career Transition Strategy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Book Features -->
+      <section class="section">
+        <h2 class="section-title">What Makes This Book Special</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10,9 9,9 8,9"></polyline>
+              </svg>
+            </div>
+            <h3>Practical & Actionable</h3>
+            <p>Every prompt is tested in real-world scenarios with clear instructions for immediate implementation in your career development.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4M9 11V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M9 11h6"></path>
+              </svg>
+            </div>
+            <h3>Industry-Specific</h3>
+            <p>Tailored specifically for software developers, with scenarios and language that resonate with technical professionals.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3>Results-Driven</h3>
+            <p>Focus on measurable career outcomes with tracking methods and success metrics for every strategy.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="cta section">
+        <h2>Get Your Copy Today</h2>
+        <p>Join the thousands of developers who have already transformed their careers with AI-powered prompt engineering.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-gradient btn-lg">Buy the Book</a>
+          <button class="btn btn-outline btn-lg" onclick="showPage('free-prompts')">Try Free Samples</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="logo footer-logo" onclick="showPage('home')" style="cursor: pointer;">
+            <span class="logo-success">Success</span>
+            <span class="logo-by">By</span>
+            <span class="logo-prompt">Prompt</span>
+            <span class="logo-ai">.ai</span>
+          </div>
+          <p style="color: var(--color-gray-400); max-width: 24rem;">
+            The developer's complete guide to leveraging generative AI for career advancement.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>Book</h3>
+            <ul>
+              <li><a href="#">Buy the Book</a></li>
+              <li><a href="#">About the Author</a></li>
+              <li><a href="#">Table of Contents</a></li>
+              <li><a href="#">Sample Chapter</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a onclick="showPage('free-prompts')" style="cursor: pointer;">Free Prompts</a></li>
+              <li><a onclick="showPage('premium-content')" style="cursor: pointer;">Premium Access</a></li>
+              <li><a href="#">Implementation Guide</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+        <div class="copyright">
+          &copy; 2025 Success By Prompt. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <!-- Book Code Modal (Updated) -->
+<div id="bookCodeModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 50; align-items: center; justify-content: center;">
+  <div style="background-color: var(--color-gray-800); border-radius: 0.5rem; max-width: 28rem; width: 100%; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Verify Your Book Code</h2>
+    <p style="color: var(--color-gray-300); margin-bottom: 1.5rem;">
+      Enter the unique 12-digit code found inside your book to unlock premium content.
+    </p>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="bookCode" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Book Code</label>
+      <input 
+        type="text" 
+        id="bookCode" 
+        placeholder="Enter 12-digit code" 
+        maxlength="12"
+        style="width: 100%; padding: 0.75rem; border-radius: 0.375rem; background-color: var(--color-gray-700); border: 1px solid var(--color-gray-600); color: white; font-size: 1rem; font-family: monospace; letter-spacing: 1px;"
+      >
+      <div style="font-size: 0.75rem; color: var(--color-gray-400); margin-top: 0.5rem;">
+        Example codes for testing: BOOK12345678, DEMO98765432
+      </div>
+    </div>
+    
+    <div id="verification-message"></div>
+    
+    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+      <button onclick="document.getElementById('bookCodeModal').style.display = 'none'; document.getElementById('verification-message').innerHTML = '';" class="btn btn-outline">Cancel</button>
+      <button onclick="verifyBookCode()" class="btn btn-primary">Verify Code</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Login Modal (Hidden by default) -->
+  <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 50; align-items: center; justify-content: center;">
+    <div style="background-color: var(--color-gray-800); border-radius: 0.5rem; max-width: 28rem; width: 100%; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Login to Your Account</h2>
+      <div style="margin-bottom: 1.5rem;">
+        <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" style="width: 100%; padding: 0.75rem; border-radius: 0.375rem; background-color: var(--color-gray-700); border: 1px solid var(--color-gray-600); color: white; font-size: 1rem; margin-bottom: 1rem;">
+        
+        <label for="password" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" style="width: 100%; padding: 0.75rem; border-radius: 0.375rem; background-color: var(--color-gray-700); border: 1px solid var(--color-gray-600); color: white; font-size: 1rem;">
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center;">
+          <input type="checkbox" id="remember" style="margin-right: 0.5rem;">
+          <label for="remember" style="font-size: 0.875rem; color: var(--color-gray-300);">Remember me</label>
+        </div>
+        <a href="#" style="font-size: 0.875rem; color: var(--color-blue-400);">Forgot password?</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <button class="btn btn-primary">Login</button>
+        <button onclick="document.getElementById('loginModal').style.display = 'none';" class="btn btn-outline">Cancel</button>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--color-gray-300);">
+        Don't have an account? <a href="#" style="color: var(--color-blue-400);">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Page Navigation
+    function showPage(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show selected page
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+      
+      // Update nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active');
+        }
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Modal and Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Navigation links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          const pageId = this.getAttribute('data-page');
+          showPage(pageId);
+        });
+      });
+
+      // Buttons to open modals
+      const loginBtn = document.querySelector('.nav-actions .btn-primary');
+      const bookCodeBtn = document.querySelector('.nav-actions .btn-secondary');
+      const loginModal = document.getElementById('loginModal');
+      const bookCodeModal = document.getElementById('bookCodeModal');
+      
+      // Open modals
+      loginBtn.addEventListener('click', function() {
+        loginModal.style.display = 'flex';
+      });
+      
+      bookCodeBtn.addEventListener('click', function() {
+        bookCodeModal.style.display = 'flex';
+      });
+      
+      // Close modals when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target === bookCodeModal) {
+          bookCodeModal.style.display = 'none';
+        }
+      });
+      
+      // Copy buttons functionality
+      const copyButtons = document.querySelectorAll('.prompt-btn-copy');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const promptCard = this.closest('.prompt-card');
+          const promptText = promptCard.querySelector('.prompt-text').textContent;
+          
+          // Create a temporary textarea element to copy text
+          const textarea = document.createElement('textarea');
+          textarea.value = promptText;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          
+          // Change button text temporarily
+          const originalText = this.textContent;
+          this.textContent = 'Copied!';
+          setTimeout(() => {
+            this.textContent = originalText;
+          }, 2000);
+        });
+      });
+    });
+    function toggleCategory(categoryId) {
+  const categorySection = document.querySelector(`[data-category="${categoryId}"]`);
+  const isExpanded = categorySection.classList.contains('expanded');
+  
+  if (isExpanded) {
+    categorySection.classList.remove('expanded');
+  } else {
+    categorySection.classList.add('expanded');
+  }
+}
+
+// Category Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const categoryGroups = document.querySelectorAll('.category-section');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetCategory = this.getAttribute('data-category');
+      
+      // Update active filter
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Show/hide categories
+      if (targetCategory === 'all') {
+        categoryGroups.forEach(group => {
+          group.classList.remove('hidden');
+        });
+      } else {
+        categoryGroups.forEach(group => {
+          const groupCategory = group.getAttribute('data-category');
+          if (groupCategory === targetCategory) {
+            group.classList.remove('hidden');
+          } else {
+            group.classList.add('hidden');
+          }
+        });
+      }
+    });
+  });
+});
+
+// Copy Prompt Functionality
+function copyPrompt(button) {
+  const promptText = button.closest('.prompt-item').querySelector('.prompt-item-text').textContent;
+  
+  // Create temporary textarea to copy text
+  const textarea = document.createElement('textarea');
+  textarea.value = promptText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+  
+  // Visual feedback
+  const originalHTML = button.innerHTML;
+  button.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13l4 4L19 7"></path>
+    </svg>
+    Copied!
+  `;
+  
+  setTimeout(() => {
+    button.innerHTML = originalHTML;
+  }, 2000);
+}
+
+// ==================================================
+// FILE 3: Updated JavaScript for your main website
+// Add this to your existing <script> section
+// ==================================================
+
+// Book Code Verification System
+// PRODUCTION VERSION - Book Code Verification System
+async function verifyBookCode() {
+  const codeInput = document.getElementById('bookCode');
+  const code = codeInput.value.trim();
+  const submitBtn = document.querySelector('#bookCodeModal .btn-primary');
+  const originalBtnText = submitBtn.textContent;
+
+  // Validation
+  if (!code) {
+    showError('Please enter your book code');
+    return;
+  }
+
+  if (code.length !== 12) {
+    showError('Book code must be exactly 12 characters');
+    return;
+  }
+
+  // Show loading state
+  submitBtn.textContent = 'Verifying...';
+  submitBtn.disabled = true;
+
+  try {
+    // Call Netlify function
+    const response = await fetch('/.netlify/functions/verify-code', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ code: code })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // Store access token
+      sessionStorage.setItem('bookAccessToken', result.accessToken);
+      
+      // Show success message
+      showSuccess('Code verified! Redirecting to premium content...');
+      
+      // Close modal
+      document.getElementById('bookCodeModal').style.display = 'none';
+      
+      // Redirect after short delay
+      setTimeout(() => {
+        // Use absolute path for production
+        window.location.href = '/premium.html';
+      }, 1500);
+      
+    } else {
+      showError(result.message);
+    }
+
+  } catch (error) {
+    console.error('Verification error:', error);
+    
+    // Better error handling for different scenarios
+    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+      showError('Connection error. Please check your internet connection and try again.');
+    } else {
+      showError('Unable to verify code. Please try again in a moment.');
+    }
+  } finally {
+    // Reset button state
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+  }
+}
+
+function showError(message) {
+  const errorDiv = document.getElementById('verification-message');
+  errorDiv.innerHTML = `
+    <div style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.375rem; margin-top: 1rem; border: 1px solid rgba(239, 68, 68, 0.3);">
+      ${message}
+    </div>
+  `;
+}
+
+function showSuccess(message) {
+  const errorDiv = document.getElementById('verification-message');
+  errorDiv.innerHTML = `
+    <div style="color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.375rem; margin-top: 1rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+      ${message}
+    </div>
+  `;
+}
+  
+ /* TEMPORARY TESTING VERSION
+// Replace your verifyBookCode function with this version for local testing
+// This simulates the Netlify function response without needing deployment
+
+async function verifyBookCode() {
+  const codeInput = document.getElementById('bookCode');
+  const code = codeInput.value.trim().toUpperCase();
+  const submitBtn = document.querySelector('#bookCodeModal .btn-primary');
+  const originalBtnText = submitBtn.textContent;
+
+  // Validation
+  if (!code) {
+    showError('Please enter your book code');
+    return;
+  }
+
+  if (code.length !== 12) {
+    showError('Book code must be exactly 12 characters');
+    return;
+  }
+
+  // Show loading state
+  submitBtn.textContent = 'Verifying...';
+  submitBtn.disabled = true;
+
+  // Simulate network delay
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  try {
+    // MOCK VERIFICATION - Replace this with actual Netlify call later
+    const validCodes = [
+      'BOOK12345678',
+      'DEMO98765432',
+      'TEST11111111',
+      'SUCCESS22222'
+    ];
+
+    const isValidCode = validCodes.includes(code);
+
+    if (isValidCode) {
+      // Generate mock access token
+      const accessToken = 'verified_' + Math.random().toString(36).substr(2, 9) + Date.now();
+      
+      // Store access token
+      sessionStorage.setItem('bookAccessToken', accessToken);
+      
+      // Show success message
+      showSuccess('Code verified! Redirecting to premium content...');
+      
+      // Redirect after short delay
+      setTimeout(() => {
+        window.location.href = './premium.html';
+      }, 1500);
+      
+    } else {
+      showError('Invalid code. Please check your book for the correct code.');
+    }
+
+  } catch (error) {
+    console.error('Verification error:', error);
+    showError('Unable to verify code. Please try again.');
+  } finally {
+    // Reset button state
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+  }
+}
+
+// Keep the same showError and showSuccess functions
+function showError(message) {
+  const errorDiv = document.getElementById('verification-message');
+  errorDiv.innerHTML = `
+    <div style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.375rem; margin-top: 1rem; border: 1px solid rgba(239, 68, 68, 0.3);">
+      ${message}
+    </div>
+  `;
+}
+
+function showSuccess(message) {
+  const errorDiv = document.getElementById('verification-message');
+  errorDiv.innerHTML = `
+    <div style="color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.375rem; margin-top: 1rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+      ${message}
+    </div>
+  `;
+}
+  */
+  </script>
+</body>
+</html>
